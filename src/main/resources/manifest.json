@@ -1,14 +1,15 @@
 {
-    "Group": "Example",
-    "Name": "ExamplePlugin",
-    "Version": "0.0.2",
-    "Description": "An example plugin for HyTale!",
+    "Group": "Critickal Modding",
+    "Name": "Aprendiendo a hacer mods",
+    "Version": "2026.1.0",
+    "Description": "Librer\u00eda de modificaciones",
     "Authors": [
         {
-            "Name": "It's you!"
+            "Name": "Zgtale Lambda",
+            "youtube": "@CritickalGames"
         }
     ],
-    "Website": "example.org",
+    "Website": "github.com/CritickalGames",
     "ServerVersion": "*",
     "Dependencies": {
         
@@ -17,6 +18,6 @@
         
     },
     "DisabledByDefault": false,
-    "Main": "org.example.plugin.ExamplePlugin",
+    "Main": "zg.critickal_modding.plugin1.ExamplePlugin",
     "IncludesAssetPack": true
 }
