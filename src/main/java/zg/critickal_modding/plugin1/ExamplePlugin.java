@@ -1,4 +1,4 @@
-package org.example.plugin;
+package zg.critickal_modding.plugin1;
 
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
@@ -16,12 +16,12 @@ public class ExamplePlugin extends JavaPlugin {
 
     public ExamplePlugin(@Nonnull JavaPluginInit init) {
         super(init);
-        LOGGER.atInfo().log("Hello from " + this.getName() + " version " + this.getManifest().getVersion().toString());
+        LOGGER.atInfo().log("HOLA " + this.getName() + " VERSIÓN " + this.getManifest().getVersion().toString());
     }
 
     @Override
     protected void setup() {
-        LOGGER.atInfo().log("Setting up plugin " + this.getName());
+        LOGGER.atInfo().log("INICIANDO PLUGIN " + this.getName());
         this.getCommandRegistry().registerCommand(new ExampleCommand(this.getName(), this.getManifest().getVersion().toString()));
     }
 }
