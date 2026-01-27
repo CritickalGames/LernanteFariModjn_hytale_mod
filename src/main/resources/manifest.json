@@ -7,6 +7,13 @@
         {
             "Name": "Zgtale Lambda",
             "youtube": "@CritickalGames"
+        },
+        {
+            "Referencias": [
+                "https://britakee-studios.gitbook.io/hytale-modding-documentation/plugins-java-development/07-getting-started-with-plugins",
+                "https://hytalemodding.dev/en/docs/guides/plugin/creating-commands",
+                "https://github.com/underscore95/Hytale-Sandbox-Plugin/tree/ui-pages"
+            ]
         }
     ],
     "Website": "github.com/CritickalGames",
@@ -18,6 +25,6 @@
         
     },
     "DisabledByDefault": false,
-    "Main": "zg.critickal_modding.plugin1.ExamplePlugin",
+    "Main": "zg.critickal_modding.Main",
     "IncludesAssetPack": true
 }

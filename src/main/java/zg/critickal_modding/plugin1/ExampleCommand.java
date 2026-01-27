@@ -1,9 +1,9 @@
 package zg.critickal_modding.plugin1;
 
-import com.hypixel.hytale.protocol.GameMode;
-import com.hypixel.hytale.server.core.Message;
-import com.hypixel.hytale.server.core.command.system.CommandContext;
-import com.hypixel.hytale.server.core.command.system.basecommands.CommandBase;
+import com.hypixel.hytale.protocol.GameMode; //auxiliar
+import com.hypixel.hytale.server.core.Message; //auxiliar
+import com.hypixel.hytale.server.core.command.system.CommandContext; //Tipo de dato
+import com.hypixel.hytale.server.core.command.system.basecommands.CommandBase; //Trait
 
 import javax.annotation.Nonnull;
 
@@ -24,6 +24,6 @@ public class ExampleCommand extends CommandBase {
 
     @Override
     protected void executeSync(@Nonnull CommandContext ctx) {
-        ctx.sendMessage(Message.raw("Hello from the " + pluginName + " v" + pluginVersion + " plugin!"));
+        ctx.sendMessage(Message.raw("Hola mundo, esto es " + pluginName + " v" + pluginVersion + " y yo soy Zeta"));
     }
 }

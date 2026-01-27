@@ -1,0 +1,12 @@
+$Common = "Common.ui"; // Importamos los estilos base del juego [2]
+
+Group {
+    LayoutMode: Center; // Centra el cuadrado en pantalla [3]
+
+    Group #CuadradoSimple {
+        // Usamos un fondo del sistema en lugar de una textura propia [1]
+        Background: $Common.@InputBoxBackground;
+        // Definimos dimensiones iguales para que sea un cuadrado [3]
+        Anchor: (Width: 200, Height: 200);
+    }
+}

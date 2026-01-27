@@ -1,0 +1,38 @@
+package zg.critickal_modding.plugin1;
+
+import com.hypixel.hytale.component.Ref;
+import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.protocol.GameMode; //auxiliar
+import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
+import com.hypixel.hytale.server.core.Message; //auxiliar
+import com.hypixel.hytale.server.core.command.system.CommandContext; //Tipo de dato
+import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
+import com.hypixel.hytale.server.core.command.system.basecommands.CommandBase; //Trait
+import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.World;
+import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import zg.critickal_modding.ui.MyUI;
+
+import javax.annotation.Nonnull;
+import java.util.concurrent.CompletableFuture;
+
+/**
+ * This is an example command that will simply print the name of the plugin in chat when used.
+ */
+public class Comando_UI_comandos extends AbstractPlayerCommand {
+
+    public Comando_UI_comandos(@Nonnull String name, @Nonnull String description) {
+        super(name, description);
+    }
+
+    @Override
+    protected void execute(@Nonnull CommandContext commandContext, @Nonnull Store<EntityStore> store, @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef, @Nonnull World world) {
+        Player player = commandContext.senderAs(Player.class);
+
+        CompletableFuture.runAsync(() -> {
+            player.getPageManager().openCustomPage(ref, store, new MyUI(playerRef, CustomPageLifetime.CanDismiss));
+            playerRef.sendMessage(Message.raw("UI Page Shown"));
+        }, world);
+    }
+}
