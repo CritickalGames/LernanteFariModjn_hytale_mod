@@ -1,19 +1,25 @@
 $Common = "Common.ui";
 
-@MyTex = PatchStyle(TexturePath: "MyBackground.png");
+@BG = PatchStyle(TexturePath: "MyBackground.png");
 
 Group {
   LayoutMode: Center;
 
   Group #MyPanel {
-    Background: @MyTex;
+    Background: @BG;
     Anchor: (Width: 800, Height: 1000);
     LayoutMode: Top;
 
     Label #MyLabel {
       Style: (FontSize: 32, Alignment: Center);
       Anchor: (Top: 50);
-      Text: "MyText";
+      Text: "Mi texto desde UI";
+      Padding: (Full: 10);
+    }
+    Label #Mietiqueta {
+      Style: (FontSize: 30, Alignment: Center);
+      Anchor: (Top: 50);
+      Text: "Éste texto será cambiado en el .java";
       Padding: (Full: 10);
     }
 
