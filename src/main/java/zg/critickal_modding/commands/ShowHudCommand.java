@@ -21,13 +21,26 @@ public class ShowHudCommand extends AbstractPlayerCommand {
     }
 
     @Override
-    protected void execute(@Nonnull CommandContext commandContext, @Nonnull Store<EntityStore> store, @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef, @Nonnull World world) {
+    protected void execute(
+            @Nonnull CommandContext commandContext,
+            @Nonnull Store<EntityStore> store,
+            @Nonnull Ref<EntityStore> ref,
+            @Nonnull PlayerRef playerRef,
+            @Nonnull World world)
+    {
         Player player = commandContext.senderAs(Player.class);
 
-        CompletableFuture.runAsync(() -> {
-            player.getHudManager().setCustomHud(playerRef, new MyHUD(playerRef));
+        CompletableFuture.runAsync(() -> { //!! Promesa de java
+            player
+                    .getHudManager()
+                    .setCustomHud(
+                            playerRef, //*Para que sepa a quién darle el hud
+                            new MyHUD(playerRef) //*Nuevo hud para el player
+                    );
 
-            playerRef.sendMessage(Message.raw("UI HUD Shown"));
-        }, world);
+            playerRef.sendMessage(Message.raw("UI HUD Shown")); //!! MENSAJE EN CHAT
+        },
+                world
+        );
     }
 }

@@ -31,8 +31,16 @@ public class ShowPageCommand extends AbstractPlayerCommand {
         Player player = commandContext.senderAs(Player.class);
 
         CompletableFuture.runAsync(() -> {
-            player.getPageManager().openCustomPage(ref, store, new MyUI(playerRef, CustomPageLifetime.CanDismiss));
-            playerRef.sendMessage(Message.raw("UI Page Shown"));
+            player
+                    .getPageManager()
+                    .openCustomPage(
+                            ref, //?
+                            store, //?
+                            new MyUI(playerRef, //?
+                                    CustomPageLifetime.CanDismiss //* Lifetime
+                            )
+                    );
+            playerRef.sendMessage(Message.raw("Mostrar: UI Page"));
         }, world);
     }
 }

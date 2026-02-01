@@ -1,4 +1,4 @@
-package zg.critickal_modding.plugin1;
+package zg.critickal_modding.commands.plugin1;
 
 import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
 import com.hypixel.hytale.server.core.entity.entities.player.pages.CustomUIPage; // [2]

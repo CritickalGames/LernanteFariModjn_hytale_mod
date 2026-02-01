@@ -22,17 +22,27 @@ public class HideHudCommand extends AbstractPlayerCommand {
     }
 
     @Override
-    protected void execute(@Nonnull CommandContext commandContext, @Nonnull Store<EntityStore> store, @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef, @Nonnull World world) {
+    protected void execute(
+            @Nonnull CommandContext commandContext,
+            @Nonnull Store<EntityStore> store,
+            @Nonnull Ref<EntityStore> ref,
+            @Nonnull PlayerRef playerRef,
+            @Nonnull World world) {
         Player player = commandContext.senderAs(Player.class);
 
         CompletableFuture.runAsync(() -> {
-            player.getHudManager().setCustomHud(playerRef, new CustomUIHud(playerRef) {
+            player
+                    .getHudManager()
+                    .setCustomHud(
+                            playerRef,
+                            new CustomUIHud(playerRef) {
                 @Override
                 protected void build(@Nonnull UICommandBuilder uiCommandBuilder) {
-
+                    //? ¿Qué hace esto acá?
+                    //* UIComandBuilder me da acceso a todo lo que pueda hacer con eso, así que...
                 }
             });
-            playerRef.sendMessage(Message.raw("UI HUD Hidden"));
+            playerRef.sendMessage(Message.raw("OCULTAR: UI HUD"));
         }, world);
     }
 }

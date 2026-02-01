@@ -1,7 +1,6 @@
-package zg.critickal_modding.plugin1;
+package zg.critickal_modding.commands.plugin1;
 
 import com.hypixel.hytale.logger.HytaleLogger;
-import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 //import dev.hytalemodding.commands.*;

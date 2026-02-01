@@ -21,12 +21,22 @@ public class HidePageCommand extends AbstractPlayerCommand {
     }
 
     @Override
-    protected void execute(@Nonnull CommandContext commandContext, @Nonnull Store<EntityStore> store, @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef, @Nonnull World world) {
+    protected void execute(
+            @Nonnull CommandContext commandContext,
+            @Nonnull Store<EntityStore> store,
+            @Nonnull Ref<EntityStore> ref,
+            @Nonnull PlayerRef playerRef,
+            @Nonnull World world) {
         Player player = commandContext.senderAs(Player.class);
 
         CompletableFuture.runAsync(() -> {
-            player.getPageManager().setPage(ref, store, Page.None);
-            playerRef.sendMessage(Message.raw("UI Page Hidden"));
+            player.getPageManager()
+                    .setPage(
+                            ref,
+                            store,
+                            Page.None //* Elimina el UI
+                    );
+            playerRef.sendMessage(Message.raw("OCULTAR: UI Page"));
         }, world);
     }
 }
